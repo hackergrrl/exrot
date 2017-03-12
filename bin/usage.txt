@@ -1,0 +1,12 @@
+USAGE:
+
+  exrot [OPTIONS]... [FILE]
+
+  Where FILE is the target file for the screenshot.
+
+  If FILE is not specified, a date-stamped file will be dropped in the
+  current directory.
+
+  -h, --help                display this help and exit
+  -d, --delay NUM           wait NUM seconds before taking a shot
+
