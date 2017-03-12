@@ -20,9 +20,10 @@
   ],
   "dependencies": {
     "electron-spawn": "^5.0.0",
-    "getusermedia": "^2.0.1"
+    "getusermedia": "^2.0.1",
+    "minimist": "^1.2.0",
+    "strftime": "^0.10.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "license": "ISC"
 }
