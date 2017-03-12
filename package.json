@@ -9,6 +9,9 @@
   "homepage": "https://github.com/noffle/exrot",
   "bugs": "https://github.com/noffle/exrot/issues",
   "main": "index.js",
+  "bin": {
+    "exrot", "bin/exrot.js"
+  },
   "scripts": {
     "test": "tape test/*.js",
     "lint": "standard"
