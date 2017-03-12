@@ -2,7 +2,7 @@
   "name": "exrot",
   "description": "like scrot, but for EXternal use: taking webcam shots",
   "author": "Stephen Whitmore <sww@eight.net>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "git://github.com/noffle/exrot.git"
   },
