@@ -10,7 +10,7 @@
   "bugs": "https://github.com/noffle/exrot/issues",
   "main": "index.js",
   "bin": {
-    "exrot": "bin/exrot.js"
+    "exrot": "bin/cli.js"
   },
   "scripts": {
     "test": "tape test/*.js",
