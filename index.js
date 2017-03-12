@@ -12,12 +12,10 @@ getUserMedia(opts, function (err, stream) {
   video.width = 1024
   video.height = 768
   video.src = window.URL.createObjectURL(stream)
-  // document.body.appendChild(video)
   video.play()
 
   video.onloadedmetadata = function (e) {
     snap()
-    // setTimeout(snap, 1000)
   }
 
   function snap () {

@@ -1,6 +1,6 @@
 {
   "name": "exrot",
-  "description": "like scrot, but for taking webcam shots",
+  "description": "like scrot, but for EXternal use: taking webcam shots",
   "author": "Stephen Whitmore <sww@eight.net>",
   "version": "0.0.0",
   "repository": {
@@ -13,14 +13,16 @@
     "test": "tape test/*.js",
     "lint": "standard"
   },
-  "keywords": [],
+  "keywords": [
+    "webcam",
+    "screenshot",
+    "scrot"
+  ],
   "dependencies": {
     "electron-spawn": "^5.0.0",
     "getusermedia": "^2.0.1"
   },
   "devDependencies": {
-    "tape": "~4.6.2",
-    "standard": "~8.3.0"
   },
   "license": "ISC"
 }
