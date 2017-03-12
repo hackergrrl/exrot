@@ -1,0 +1,26 @@
+{
+  "name": "exrot",
+  "description": "like scrot, but for taking webcam shots",
+  "author": "Stephen Whitmore <sww@eight.net>",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/noffle/exrot.git"
+  },
+  "homepage": "https://github.com/noffle/exrot",
+  "bugs": "https://github.com/noffle/exrot/issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js",
+    "lint": "standard"
+  },
+  "keywords": [],
+  "dependencies": {
+    "electron-spawn": "^5.0.0",
+    "getusermedia": "^2.0.1"
+  },
+  "devDependencies": {
+    "tape": "~4.6.2",
+    "standard": "~8.3.0"
+  },
+  "license": "ISC"
+}
