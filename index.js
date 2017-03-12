@@ -1,14 +1,17 @@
 var getUserMedia = require('getusermedia')
 
 module.exports = function (opts, done) {
-  opts = opts || {}
+  if (!done) {
+    done = opts
+    opts = {}
+  }
 
-  var opts = {
+  var mopts = {
     audio: false,
     video: true
   }
 
-  getUserMedia(opts, function (err, stream) {
+  getUserMedia(mopts, function (err, stream) {
     if (err) return done(err)
 
     var video = document.createElement('video')
