@@ -1,6 +1,8 @@
 var getUserMedia = require('getusermedia')
 
-module.exports = function (done) {
+module.exports = function (opts, done) {
+  opts = opts || {}
+
   var opts = {
     audio: false,
     video: true
@@ -10,8 +12,8 @@ module.exports = function (done) {
     if (err) return done(err)
 
     var video = document.createElement('video')
-    video.width = 1024
-    video.height = 768
+    video.width = opts.width || 1024
+    video.height = opts.height || 768
     video.src = window.URL.createObjectURL(stream)
     video.play()
 
