@@ -25,15 +25,28 @@ module.exports = function (opts, done) {
     }
 
     function snap () {
+      if (opts.sfx) playSnapSfx()
+
       var canvas = document.createElement('canvas')
       canvas.width = video.width
       canvas.height = video.height
       canvas.getContext('2d')
         .drawImage(video, 0, 0, video.width, video.height)
 
-      var data = new Buffer(canvas.toDataURL().split(',')[1], 'base64')
-      done(null, data)
+      setTimeout(fin, 100)
+
+      function fin () {
+        var data = new Buffer(canvas.toDataURL().split(',')[1], 'base64')
+        done(null, data)
+      }
     }
   })
 }
 
+function playSnapSfx () {
+  var sfx = require('./camera_shutter')
+
+  var audio = document.createElement('audio')
+  audio.src = sfx
+  audio.play()
+}

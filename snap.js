@@ -1,6 +1,11 @@
 var takeShot = require('./')
+var args = require('minimist')(process.argv)
 
-takeShot(function (err, data) {
+var opts = {}
+
+opts.sfx = args.x || args.sfx || null
+
+takeShot(opts, function (err, data) {
   if (err) {
     console.error('unable to take shot: ' + err)
     process.exit(1)

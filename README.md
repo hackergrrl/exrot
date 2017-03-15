@@ -27,6 +27,7 @@ USAGE:
 
   -h, --help                display this help and exit
   -d, --delay NUM           wait NUM seconds before taking a shot
+  -x, --sfx                 play a camera shutter sound when finished
 
 ```
 
@@ -56,8 +57,10 @@ var exrot = require('exrot')
 
 ### exrot(opts, cb)
 
-`opts`, if present, can set `opts.width` and/or `opts.height` to be the desired
-output dimensions of the image.
+`opts`, if present, can set
+
+- `opts.sfx` (boolean) - whether to play a camera shutter sound effect on when
+  finished.
 
 `cb` is a callback that will be called with `cb(err, data)`, where `data` is a
 `Buffer` of raw PNG data.

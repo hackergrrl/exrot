@@ -9,4 +9,5 @@ USAGE:
 
   -h, --help                display this help and exit
   -d, --delay NUM           wait NUM seconds before taking a shot
+  -x, --sfx                 play a camera shutter sound when finished
 

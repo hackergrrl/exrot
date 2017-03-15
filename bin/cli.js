@@ -20,7 +20,9 @@ if (args.d || args.delay) {
 }
 
 function go () {
-  var p = spawn(path.join(__dirname, '..', 'snap.js'))
+  var file = path.join(__dirname, '..', 'snap.js')
+  var pargs = [file].concat(process.argv.slice(2))
+  var p = spawn.apply(this, pargs)
   p.stdout.pipe(fs.createWriteStream(out))
 }
 
