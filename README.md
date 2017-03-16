@@ -1,6 +1,6 @@
 # exrot
 
-> like scrot, but for **ex**ternal use: taking webcam shots
+> like [scrot](https://en.wikipedia.org/wiki/Scrot), but for **ex**ternal use: taking webcam shots
 
 Sometimes I like to take a quick picture of a whiteboard or some notes, but
 don't want to go find a phone and fiddle with getting images off of it.

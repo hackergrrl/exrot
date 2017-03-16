@@ -12,10 +12,6 @@
   "bin": {
     "exrot": "bin/cli.js"
   },
-  "scripts": {
-    "test": "tape test/*.js",
-    "lint": "standard"
-  },
   "keywords": [
     "webcam",
     "screenshot",
