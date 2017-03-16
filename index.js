@@ -16,7 +16,8 @@ module.exports = function (opts, done) {
     if (err) return done(err)
 
     var video = document.createElement('video')
-    video.style.width = opts.width || window.innerWidth
+    video.style.width = opts.width || '100%'
+    video.style.height = opts.height || '100%'
     // video.height = opts.height || window.innerHeight
     video.src = window.URL.createObjectURL(stream)
     video.play()
