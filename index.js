@@ -5,6 +5,7 @@ module.exports = function (opts, done) {
     done = opts
     opts = {}
   }
+  opts = opts || {}
 
   var mopts = {
     audio: false,
@@ -15,23 +16,29 @@ module.exports = function (opts, done) {
     if (err) return done(err)
 
     var video = document.createElement('video')
-    video.width = opts.width || 1024
-    video.height = opts.height || 768
+    video.style.width = opts.width || window.innerWidth
+    // video.height = opts.height || window.innerHeight
     video.src = window.URL.createObjectURL(stream)
     video.play()
 
     video.onloadedmetadata = function (e) {
-      snap()
+      if (!opts.interactive) snap()
+      else {
+        document.body.appendChild(video)
+        video.onclick = function (e) {
+          snap()
+        }
+      }
     }
 
     function snap () {
       if (opts.sfx) playSnapSfx()
 
       var canvas = document.createElement('canvas')
-      canvas.width = video.width
-      canvas.height = video.height
+      canvas.width = video.videoWidth
+      canvas.height = video.videoHeight
       canvas.getContext('2d')
-        .drawImage(video, 0, 0, video.width, video.height)
+        .drawImage(video, 0, 0, canvas.width, canvas.height)
 
       setTimeout(fin, 100)
 

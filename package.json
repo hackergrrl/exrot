@@ -22,7 +22,7 @@
     "scrot"
   ],
   "dependencies": {
-    "electron-spawn": "^5.0.0",
+    "electron-prebuilt": "^1.4.13",
     "getusermedia": "^2.0.1",
     "minimist": "^1.2.0",
     "strftime": "^0.10.0"

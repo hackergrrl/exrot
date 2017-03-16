@@ -1,17 +1,16 @@
 var takeShot = require('./')
-var args = require('minimist')(process.argv)
+var ipc = require('electron').ipcRenderer
 
-var opts = {}
+var stdout = require('electron').remote.getGlobal('process').stdout
 
-opts.sfx = args.x || args.sfx || null
-
-takeShot(opts, function (err, data) {
-  if (err) {
-    console.error('unable to take shot: ' + err)
-    process.exit(1)
-  } else {
-    process.stdout.write(data, null, function () {
-      process.exit(0)
-    })
-  }
+ipc.on('snap', function (_, opts) {
+  takeShot(opts, function (err, data) {
+    if (err) {
+      process.exit(1)
+    } else {
+      stdout.write(data, null, function () {
+        ipc.send('done')
+      })
+    }
+  })
 })

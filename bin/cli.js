@@ -2,7 +2,7 @@
 
 var fs = require('fs')
 var path = require('path')
-var spawn = require('electron-spawn')
+var spawn = require('child_process').spawn
 var args = require('minimist')(process.argv)
 var strftime = require('strftime')
 
@@ -20,10 +20,14 @@ if (args.d || args.delay) {
 }
 
 function go () {
-  var file = path.join(__dirname, '..', 'snap.js')
+  var file = path.join(__dirname, '..', 'run_electron.js')
   var pargs = [file].concat(process.argv.slice(2))
-  var p = spawn.apply(this, pargs)
-  p.stdout.pipe(fs.createWriteStream(out))
+  var p = spawn('electron', pargs)
+  var ws = fs.createWriteStream(out)
+  p.stdout.pipe(ws)
+  ws.on('end', function () {
+    process.exit(0)
+  })
 }
 
 function printUsage () {
