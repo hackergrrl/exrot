@@ -9,7 +9,9 @@ ipc.on('snap', function (_, opts) {
       process.exit(1)
     } else {
       stdout.write(data, null, function () {
-        ipc.send('done')
+        setTimeout(function () {
+          ipc.send('done')
+        }, 400)
       })
     }
   })
