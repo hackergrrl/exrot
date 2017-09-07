@@ -3,7 +3,7 @@
 var fs = require('fs')
 var path = require('path')
 var spawn = require('child_process').spawn
-var args = require('minimist')(process.argv)
+var args = require('minimist')(process.argv, { boolean: ['x', 'i']})
 var strftime = require('strftime')
 
 if (args.h || args.help) {
